@@ -59,6 +59,10 @@ typedef struct
     RTFLOAT temperature;
     bool humidityValid;
     RTFLOAT humidity;
+    bool temperatureFromPressureValid;
+    RTFLOAT temperatureFromPressure;
+    bool temperatureFromHumidityValid;
+    RTFLOAT temperatureFromHumidity;
 } RTIMU_DATA;
 
 #endif // _RTIMULIBDEFS_H

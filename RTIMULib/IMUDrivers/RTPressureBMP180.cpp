@@ -75,8 +75,10 @@ bool RTPressureBMP180::pressureRead(RTIMU_DATA& data)
 {
     data.pressureValid = false;
     data.temperatureValid = false;
+    data.temperatureFromPressureValid = false;
     data.temperature = 0;
     data.pressure = 0;
+    data.temperatureFromPressure = 0;
 
     if (m_state == BMP180_STATE_IDLE) {
         // start a temperature conversion
@@ -92,8 +94,10 @@ bool RTPressureBMP180::pressureRead(RTIMU_DATA& data)
     if (m_validReadings) {
         data.pressureValid = true;
         data.temperatureValid = true;
+        data.temperatureFromPressureValid = true;
         data.temperature = m_temperature;
         data.pressure = m_pressure;
+        data.temperatureFromPressure = m_temperature;
         // printf("P: %f, T: %f\n", m_pressure, m_temperature);
     }
     return true;

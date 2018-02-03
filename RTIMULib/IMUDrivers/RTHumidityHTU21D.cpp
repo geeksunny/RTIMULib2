@@ -65,6 +65,8 @@ bool RTHumidityHTU21D::humidityRead(RTIMU_DATA& data)
     data.humidity = m_humidity;
     data.temperatureValid = m_temperatureValid;
     data.temperature = m_temperature;
+    data.temperatureFromHumidityValid = m_temperatureValid;
+    data.temperatureFromHumidity = m_temperature;
 
     return true;
 }
